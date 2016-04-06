@@ -1,7 +1,15 @@
-var url = "http://forecast.weather.gov/MapClick.php?lat=30.470698&lon=-87.232453&FcstType=json",
-          windDirection = "";
+(function( $ ) {
+ 
+    $.fn.weatherGov = function( options ) {
+          var settings = $.extend({
+            // These are the defaults.
+            lat: "30.470698",
+            long: "-87.232453"
+        }, options );    
+          
+          var  windDirection = "";
       $.ajax({
-         url: url,
+         url: "http://forecast.weather.gov/MapClick.php?lat="+settings.lat+"&lon="+settings.long+"&FcstType=json",
          dataType: "jsonp",
          success: function(data){
              console.log(data.currentobservation);
@@ -44,3 +52,11 @@ var url = "http://forecast.weather.gov/MapClick.php?lat=30.470698&lon=-87.232453
              console.log("Condition " + data.currentobservation.Weatherimage.split('.')[0]);
          }
       });
+        
+        return this;
+ 
+    };
+ 
+}( jQuery ));
+
+
