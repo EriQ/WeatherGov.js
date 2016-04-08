@@ -1,0 +1,75 @@
+.wi.bkn:before, .wi.sct:before, .wi.few:before {
+    content: "\f002";
+}
+.wi.nbkn:before, .wi.nsct:before, .wi.nfew:before {
+    content: "\f086";
+}
+.wi.skc:before {
+    content: "\f00d";
+}
+.wi.nskc:before {
+    content: "\f02e";
+}
+.wi.ovc:before, .wi.novc:before {
+    content: "\f041";
+}
+.wi.fg:before {
+    content: "\f003";
+}
+.wi.nfg:before {
+    content: "\f04a";
+}
+.wi.smoke:before {
+    content: "\f062";
+}
+.wi.fzra:before, .wi.fzrara:before {
+    content: "\f004";
+}
+.wi.ip:before {
+    content: "\f0b2";
+}
+.wi.mix:before, .wi.rasn:before {
+    content: "\f006";
+}
+.wi.nmix:before, .wi.nrasn:before {
+    content: "\f026";
+}
+.wi.shra:before {
+    content: "\f01a";
+}
+.wi.tsra:before, .wi.hi_tsra:before {
+    content: "\f010";
+}
+.wi.ntsra:before, .wi.hi_ntsra:before {
+    content: "\f03b";
+}
+.wi.sn:before {
+    content: "\f00a";
+}
+.wi.nsn:before {
+    content: "\f02a";
+}
+.wi.wind:before, .wi.nwind:before {
+    content: "\f021";
+}
+.wi.hi_shwrs:before, .wi.ra1:before {
+    content: "\f009";
+}
+.wi.hi_nshwrs:before, .wi.nra:before {
+    content: "\f029";
+}
+.wi.ra:before {
+    content: "\f008";
+}
+.wi.nra:before {
+    content: "\f028";
+}
+.wi.nsvrtsra:before {
+    content: "\f056";
+}
+.wi.dust:before {
+    content: "\f063";
+}
+.wi.mist:before {
+    content: "\f0b6";
+}

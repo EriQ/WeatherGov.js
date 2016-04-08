@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <title>WeatherGov.js</title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="css/weather-icons.min.css"/>
+        <link rel="stylesheet" href="css/icons.css" />
+        <style>
+            span {
+                display: block;
+            }
+        </style>
+        <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+        <script src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+        <script src="jquery.WeatherGov.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function(){
+               $("#weather").weatherGov(); 
+            });
+        </script>
+    </head>
+    <body>
+        <div id="weather"></div>
+    </body>
+</html>

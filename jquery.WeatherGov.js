@@ -4,7 +4,9 @@
           var settings = $.extend({
             // These are the defaults.
             lat: "30.470698",
-            long: "-87.232453"
+            long: "-87.232453",
+            container: this["selector"],
+            template: '<i id="weatherIcon" class="wi"></i><span id="weatherTemperature"></span><span id="weatherCondition"></span>TODAY&#8217;S HIGH<span id="weatherTodayHigh"></span>TODAY&#8217;S LOW<span id="weatherTodayLow"></span>WIND <span id="weatherWind"></span>HUMIDITY <span id="weatherHumidity"></span>PRESSURE <span id="weatherPressure"></span>'
         }, options );    
           
           var  windDirection = "";
@@ -12,7 +14,6 @@
          url: "http://forecast.weather.gov/MapClick.php?lat="+settings.lat+"&lon="+settings.long+"&FcstType=json",
          dataType: "jsonp",
          success: function(data){
-             console.log(data.currentobservation);
              if(data.currentobservation.Windd <= 11.25 || data.currentobservation.Windd >= 348.75)
                  windDirection = "N";
              else if (data.currentobservation.Windd <= 33.75)
@@ -46,10 +47,20 @@
              else if (data.currentobservation.Windd < 348.75)
                  windDirection = "NNW";
     
-             console.log("Temperature " + data.currentobservation.Temp);
-             console.log("Condition " + data.currentobservation.Weather);
-             console.log("Wind " + windDirection + " " + data.currentobservation.Winds + " mph");
-             console.log("Condition " + data.currentobservation.Weatherimage.split('.')[0]);
+             
+             
+             $(settings.container).append(settings.template);
+             
+             $("#weatherIcon").addClass(data.currentobservation.Weatherimage.split('.')[0]);
+             $("#weatherTemperature").html(data.currentobservation.Temp + "&#176; F");
+             $("#weatherCondition").html(data.currentobservation.Weather);
+             $("#weatherWind").html(windDirection + " " + data.currentobservation.Winds + " mph");
+             $("#weatherTodayLow").html(data.data.temperature[0]);
+             $("#weatherTodayHigh").html(data.data.temperature[1]);
+             $("#weatherHumidity").html(data.currentobservation.Relh + "%");
+             $("#weatherPressure").html(data.currentobservation.Altimeter);
+             
+             
          }
       });
         
