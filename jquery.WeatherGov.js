@@ -5,7 +5,7 @@
             lat: "30.470698",
             long: "-87.232453",
             container: this["selector"],
-            template: '<i id="weatherIcon" class="wi"></i><span id="weatherTemperature"></span><span id="weatherCondition"></span><span id="weatherTodayExtremes"></span>WIND <span id="weatherWind"></span>HUMIDITY <span id="weatherHumidity"></span>PRESSURE <span id="weatherPressure"></span>'
+            template: '<i id="weatherIcon" class="wi"></i><span id="weatherTemperature"></span><span id="weatherCondition"></span>Today&#8217;s <span id="weatherTodayLow"></span>Today&#8217;s <span id="weatherTodayHigh"></span>WIND <span id="weatherWind"></span>HUMIDITY <span id="weatherHumidity"></span>PRESSURE <span id="weatherPressure"></span>'
         }, options );    
           var  windDirection = "";
       $.ajax({
@@ -50,7 +50,8 @@
              $("#weatherTemperature").html(data.currentobservation.Temp + "&#176; F");
              $("#weatherCondition").html(data.currentobservation.Weather);
              $("#weatherWind").html(windDirection + " " + data.currentobservation.Winds + " mph");
-             $("#weatherTodayExtremes").html(data.time.startPeriodName[0] + "&#8317;s " + data.time.tempLabel[0] + "" + data.data.temperature[0] + data.time.startPeriodName[0] + "&#8317;s " + data.time.tempLabel[1] + "" + data.data.temperature[1]);
+             $("#weatherTodayLow").html(data.time.tempLabel[0] + " " + data.data.temperature[0]);
+             $("#weatherTodayLow").html(data.time.tempLabel[1] + " " + data.data.temperature[1]);
              $("#weatherHumidity").html(data.currentobservation.Relh + "%");
              $("#weatherPressure").html(data.currentobservation.Altimeter);
          }
