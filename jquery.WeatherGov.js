@@ -51,7 +51,7 @@
              $("#weatherCondition").html(data.currentobservation.Weather);
              $("#weatherWind").html(windDirection + " " + data.currentobservation.Winds + " mph");
              $("#weatherTodayLow").html(data.time.tempLabel[0] + " " + data.data.temperature[0]);
-             $("#weatherTodayLow").html(data.time.tempLabel[1] + " " + data.data.temperature[1]);
+             $("#weatherTodayHigh").html(data.time.tempLabel[1] + " " + data.data.temperature[1]);
              $("#weatherHumidity").html(data.currentobservation.Relh + "%");
              $("#weatherPressure").html(data.currentobservation.Altimeter);
          }
