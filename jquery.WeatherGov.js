@@ -44,14 +44,14 @@
                  windDirection = "NW";
              else if (data.currentobservation.Windd < 348.75)
                  windDirection = "NNW";
-    
+            console.log(data);
              $(settings.container).append(settings.template);
              $("#weatherIcon").addClass(data.currentobservation.Weatherimage.split('.')[0]);
              $("#weatherTemperature").html(data.currentobservation.Temp + "&#176; F");
              $("#weatherCondition").html(data.currentobservation.Weather);
              $("#weatherWind").html(windDirection + " " + data.currentobservation.Winds + " mph");
-             $("#weatherTodayLow").html(data.time.tempLabel[0] + " " + data.data.temperature[0]);
-             $("#weatherTodayHigh").html(data.time.tempLabel[1] + " " + data.data.temperature[1]);
+             $("#weatherTodayLow").html(data.time.tempLabel[0] + " " + data.data.temperature[0] + "&#176; F");
+             $("#weatherTodayHigh").html(data.time.tempLabel[1] + " " + data.data.temperature[1] + "&#176; F");
              $("#weatherHumidity").html(data.currentobservation.Relh + "%");
              $("#weatherPressure").html(data.currentobservation.Altimeter);
          }
@@ -59,5 +59,4 @@
         return this;
     };
 }( jQuery ));
-
 
