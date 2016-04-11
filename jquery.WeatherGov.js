@@ -44,7 +44,6 @@
                  windDirection = "NW";
              else if (data.currentobservation.Windd < 348.75)
                  windDirection = "NNW";
-            console.log(data);
              $(settings.container).append(settings.template);
              $("#weatherIcon").addClass(data.currentobservation.Weatherimage.split('.')[0]);
              $("#weatherTemperature").html(data.currentobservation.Temp + "&#176; F");
