@@ -1,5 +1,4 @@
 (function( $ ) {
- 
     $.fn.weatherGov = function( options ) {
           var settings = $.extend({
             // These are the defaults.
@@ -8,7 +7,6 @@
             container: this["selector"],
             template: '<i id="weatherIcon" class="wi"></i><span id="weatherTemperature"></span><span id="weatherCondition"></span><span id="weatherTodayExtremes"></span>WIND <span id="weatherWind"></span>HUMIDITY <span id="weatherHumidity"></span>PRESSURE <span id="weatherPressure"></span>'
         }, options );    
-          
           var  windDirection = "";
       $.ajax({
          url: "http://forecast.weather.gov/MapClick.php?lat="+settings.lat+"&lon="+settings.long+"&FcstType=json",
@@ -47,10 +45,7 @@
              else if (data.currentobservation.Windd < 348.75)
                  windDirection = "NNW";
     
-             
-             
              $(settings.container).append(settings.template);
-             
              $("#weatherIcon").addClass(data.currentobservation.Weatherimage.split('.')[0]);
              $("#weatherTemperature").html(data.currentobservation.Temp + "&#176; F");
              $("#weatherCondition").html(data.currentobservation.Weather);
@@ -58,15 +53,10 @@
              $("#weatherTodayExtremes").html(data.time.startPeriodName[0] + "&#8317;s " + data.time.tempLabel[0] + "" + data.data.temperature[0] + data.time.startPeriodName[1] + "&#8317;s " + data.time.tempLabel[1] + "" + data.data.temperature[1]);
              $("#weatherHumidity").html(data.currentobservation.Relh + "%");
              $("#weatherPressure").html(data.currentobservation.Altimeter);
-             
-             
          }
       });
-        
         return this;
- 
     };
- 
 }( jQuery ));
 
 
