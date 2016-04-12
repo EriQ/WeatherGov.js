@@ -1,3 +1,4 @@
+/* WeatherGov.js https://github.com/EriQ/WeatherGov.js */
 (function( $ ) {
     $.fn.weatherGov = function( options ) {
           var settings = $.extend({
